@@ -1,0 +1,137 @@
+FORMAT: 1A
+HOST: localhost/
+
+# UAS
+
+Proyek UAS
+
+## Data - Data Biodata [/rest_api]
+
+### Semua list biodata [GET/rest_api/get.php]
+
++ Response 200 (application/json)
+
+        [
+            {
+            "user": [
+                {
+                    "name": "Michael",
+                    "age": "20",
+                    "email": "MS80035@student.uph.edu"
+                },
+                {
+                    "name": "Albert",
+                    "age": "20",
+                    "email": "albertganteng@gmail.com"
+                },
+                {
+                    "name": "Timothy",
+                    "age": "21",
+                    "email": "timothy@gmail.com"
+                },
+                {
+                    "name": "andy",
+                    "age": "19",
+                    "email": "andypro@gmail.com"
+                },
+                {
+                    "name": "felix",
+                    "age": "25",
+                    "email": "felixdong@gmail.com"
+                }
+            ]
+        }
+        ]
+
+### Biodata diri [POST]
+
+Untuk menambah data baru
+
++ Request (application/json)
+
+        {
+        "Data user": [
+        {
+            $name = $_POST["name"];
+            $age = $_POST["age"];
+            $email = $_POST["email"];
+        }
+        ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /rest_api/post.php
+
+    + Body
+
+            {
+            "Data user": [
+            {
+                "name": "",
+                "age": "",
+                "email": ""
+            },
+            ]
+            }
+            
+### Update data diri [PUT]
+
+Untuk mengupdate data diri
+
++ Request (application/json)
+
+        {
+        "Status user": [
+        {
+            "ID": "id",
+        }
+        ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /rest_api/update.php
+
+    + Body
+
+            {
+            "Status user": [
+            {
+                "name": "",
+                "age": "",
+                "email": ""
+            },
+            ]
+            }
+            
+### Menghapus data diri [DELETE/rest_api/delete.php]
+
+Untuk menghapus data diri
+
++ Request (application/json)
+
+        {
+        "Status Data Task": [
+        {
+            "ID": "id",
+        }
+        ]
+        }
+        
+        + Response 201 (application/json)
+
+    + Headers
+
+            Location: /rest_api/delete
+
+    + Body
+
+            {
+            " Data berhasil dihapuskan "
+            ]
+            }
